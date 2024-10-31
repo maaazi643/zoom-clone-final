@@ -1,3 +1,4 @@
+import { useAuth } from "@clerk/clerk-expo";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useState } from "react";
 import { Text, TouchableOpacity, View } from "react-native";
@@ -5,6 +6,7 @@ import Dialog from "react-native-dialog";
 
 export default function IndexScreen() {
   const [dialogOpen, setDialogOpen] = useState(false);
+  const { signOut } = useAuth();
   return (
     <View>
       <TouchableOpacity
