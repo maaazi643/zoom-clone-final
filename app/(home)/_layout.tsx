@@ -1,15 +1,20 @@
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Tabs } from "expo-router";
+import { Redirect, Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
+import { useAuth } from "@clerk/clerk-expo";
 
 export default function CallRoutesLayout() {
+  const { isSignedIn } = useAuth();
+  if (isSignedIn) {
+    return <Redirect href={"/(auth)/sign-in"} />;
+  }
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Tabs
         screenOptions={({ route }) => ({
           header: () => null,
-          tabBarActiveTintColor: '#5F5DEC',
+          tabBarActiveTintColor: "#5F5DEC",
           tabBarStyle: {
             display: route.name === "[id]" ? "none" : "flex",
           },
