@@ -15,7 +15,11 @@
     "ios": {
       "supportsTablet": true,
       "bitcode": false,
-      "bundleIdentifier": "com.maaaazi101.zoomclonefinal"
+      "bundleIdentifier": "com.maaaazi101.zoomclonefinal",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses camera to take photos and videos for live calls",
+        "NSMicrophoneUsageDescription": "This app uses microphone to record audio for live calls "
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -62,10 +66,7 @@
       [
         "react-native-permissions",
         {
-          "iosPermissions": [
-            "camera",
-            "microphone"
-          ]
+          "iosPermissions": ["camera", "microphone"]
         }
       ]
     ],
