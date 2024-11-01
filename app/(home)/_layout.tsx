@@ -9,6 +9,7 @@ import {
   logLevels,
   StreamVideo,
   StreamVideoClient,
+  User,
 } from "@stream-io/video-react-native-sdk";
 
 const apiKey = process.env.EXPO_PUBLIC_GET_STREAM_API_KEY;
